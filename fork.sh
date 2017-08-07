@@ -7,8 +7,8 @@ if [[ -z "$TAG" ]]; then
   exit 1
 fi
 
-cd /tmp
-mkdir bbuddy
+WORK_DIR=`mktemp -d`
+cd "$WORK_DIR"
 
 function fork {
   repo="$1"
@@ -18,13 +18,14 @@ function fork {
   git remote add $TAG git@github.com:bbuddies/"$repo-$TAG".git
   git push $TAG master
   cd ..
-  rm -rf "$repo"
 }
 
 fork bbuddy
-#fork bbuddy-api
-#fork bbuddy-android
-#fork bbuddy-ios
-#fork bbuddy-react
-#fork bbuddy-angular
-#fork bbuddy-acceptance-test
+fork bbuddy-api
+fork bbuddy-android
+fork bbuddy-ios
+fork bbuddy-react
+fork bbuddy-angular
+fork bbuddy-acceptance-test
+
+rm -rf "$WORK_DIR"
