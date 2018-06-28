@@ -17,7 +17,7 @@ function clone {
 }
 
 clone bbuddy
-clone bbuddy-api
+clone bbuddy-java-api
 clone bbuddy-android
 clone bbuddy-ios
 clone bbuddy-react

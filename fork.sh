@@ -21,7 +21,7 @@ function fork {
 }
 
 fork bbuddy
-fork bbuddy-api
+fork bbuddy-java-api
 fork bbuddy-android
 fork bbuddy-ios
 fork bbuddy-react
